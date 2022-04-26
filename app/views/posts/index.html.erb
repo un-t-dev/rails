@@ -1,7 +1,10 @@
 <div class="main_container">
-  <div class="information">
-    <h2>スケジュール一覧</h2>
-  </div>
+  
+  <h2>スケジュール一覧</h2>
+  
+  <% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
   
   <table>
     <thead>
@@ -32,5 +35,5 @@
     </tbody>
   </table>
   
-  <p><%= link_to"スケジュール新規登録",new_post %></p>
+  <p><%= link_to"スケジュール新規登録",new_post_path %></p>
 </div>

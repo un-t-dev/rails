@@ -1,7 +1,6 @@
 <div class="main_container">
-  <div class="information">
-    <h2>スケジュール新規作成</h2>
-  </div>
+  
+  <h2>スケジュール新規作成</h2>
   
   <%= form_with model: @user do |f| %>
    <table>
@@ -21,6 +20,16 @@
        <th><%= f.label :all_day, "終日" %></th>
        <td><%= f.check_box :all_day, {}, :status_difference, nil %></td>
      </tr>
+     <tr>
+         <th><%= f.label :memo, "メモ" %></th>
+         <td><%= f.text_area :memo %></td>
+     </tr>
    </table>
+   <div>
+       <ul>
+           <li><%= f.submit"新規登録する" %></li>
+           <li><%= link_to "スケジュール一覧に戻る",posts_path %></li>
+       </ul>
+   </div>
+  <% end %>
 </div>
-<% end %>

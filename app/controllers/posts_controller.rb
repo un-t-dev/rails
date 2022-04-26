@@ -8,6 +8,14 @@ class PostsController < ApplicationController
   end
  
   def create
+    binding.pry
+    @post = Post.new(params.require(:post).permit(:title, :start_date, :end_date, :all_day, :memo))
+    if @post.save
+      flash[notice] = "新規登録しました"
+      redirect_to :posts
+    else
+      render "new"
+    end
   end
  
   def show
@@ -21,4 +29,5 @@ class PostsController < ApplicationController
  
   def destroy
   end
+  
 end
