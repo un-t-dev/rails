@@ -16,7 +16,18 @@
 header,footer {
   width: 100%;
   padding: 10px;
-  background: #c52f24;
+  font-family: cursive;
+  background: #F0F;
   color: #fff;
   margin: 0px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  display: block;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  box-sizing: border-box;
 }
