@@ -1,0 +1,35 @@
+<div class="main_container">
+  
+  <h2>スケジュール新規作成</h2>
+  
+  <%= render "shared/error", obj: @post %>
+  
+  <%= form_with model: @post, local: true do |f| %>
+  <table id="newtable">
+    <tr>
+      <th class="newth"><%= f.label :title ,"タイトル" %></th>
+      <td class="newtd"><%= f.text_field :title %></td>
+    </tr>
+
+    <tr>
+      <th class="newth"><%= f.label :start_date ,"開始日" %></th>
+      <td class="newtd"><%= f.date_field :start_date %></td>
+    </tr>
+    <tr>
+      <th class="newth"><%= f.label :end_date ,"終了日" %></th>
+      <td class="newtd"><%= f.date_field :end_date %></td>
+    </tr>
+    <tr>
+      <th class="newth"><%= f.label :memo,"スケジュールメモ" %></th>
+      <td class="newtd"><%= f.text_area :memo %></td>
+    </tr>
+  </table>
+
+  <div>
+    <ul>
+      <li><%= f.submit "スケジュールを新規登録する"%></li>
+      <li><%= link_to "スケジュール一覧に戻る",posts_path %></li>
+    </ul>
+  </div>
+<% end %>
+</div>
